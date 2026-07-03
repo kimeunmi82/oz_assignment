@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hong gil dong Resume</title>
+  
+  <link rel="stylesheet" href="./resume_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+</head>
+<body>
+  <nav class="sidebar">
+    <a href="#resume" class="active">이력서</a>
+    <a href="#portfolio">포트폴리오</a>
+    <button type="button" onclick="window.print()">PDF 내려받기</button>
+  </nav>
+
+  <main>
+    <article class="resume" id="resume">
+      <header class="profile">
+        <div>
+          <h1 class="name">김은미</h1>
+          <div class="contact">
+            <span>▯ 010-9525-8262</span>
+            <span>@ blesseunmi@gmil.com</span>
+            <span>◉ 김은미's Github</span>
+          </div>
+        </div>
+        <div class="avatar" aria-label="프로필 이미지"></div>
+      </header>
+
+      <section>
+        <h2 class="section-title">Introduce</h2>
+        <p class="intro-text">
+          Java 개발 역량을 바탕으로 AI 기술을 녹여내어, 의료 현장의 혁신을 이끄는 헬스케어 서비스를 개발하는 개발자입니다.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title">Skills</h2>
+        <div class="skills">
+          <div>
+            <p class="skill-group-title">Language</p>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">Java</span>
+              <span class="chip">SQL</span>
+            </div>
+          </div>
+          <div>
+            <p class="skill-group-title">Framework</p>
+            <div class="chips">
+              <span class="chip">FastAPI</span>
+              <span class="chip">React</span>
+              <span class="chip">Next.js</span>
+            </div>
+          </div>
+          <div>
+            <p class="skill-group-title">Database</p>
+            <div class="chips">
+              <span class="chip">Oracle</span>
+              <span class="chip">MySql</span>
+            </div>
+          </div>
+          <div>
+            <p class="skill-group-title">Infra</p>
+            <div class="chips">
+              <span class="chip">AWS</span>
+              <span class="chip">Docker</span>
+              <span class="chip">GitHub Actions</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-divider">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="company">
+          <div class="company-head">
+            <div>
+              <h3 class="company-name">크루메이트</h3>
+              <p class="role">Developer <span class="bar">|</span> 차장</p>
+            </div>
+            <div class="period">2007.04~2026.02</div>
+          </div>
+
+          <div class="projects">
+            <div class="project">
+              <div class="project-head">
+                <h4 class="project-title">CJmall 전시 운영개발</h4>
+                <div class="period">2023.01 ~ 2025.12</div>
+              </div>
+              <ul>
+                <li>백오피스 기능 설계 및 개발</li>
+                <li>전시 API 개발</li>
+                <li>전시 관리 Batch 개발</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- <div class="company">
+          <div class="company-head">
+            <div>
+              <h3 class="company-name">네이버</h3>
+              <p class="role">Frontend Developer <span class="bar">|</span> 인턴</p>
+            </div>
+            <div class="period">2022.06 ~ 2022.09</div>
+          </div>
+
+          <div class="projects">
+            <div class="project">
+              <div class="project-head">
+                <h4 class="project-title">공통 UI 컴포넌트 라이브러리 개발</h4>
+                <div class="period">2022.06 ~ 2022.09</div>
+              </div>
+              <ul>
+                <li>React 기반의 사내 디자인 시스템 컴포넌트 개발 보조</li>
+                <li>Storybook을 활용한 컴포넌트 문서화 및 테스트</li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+      </section>
+
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="simple-list">
+          <div class="simple-row">
+            <div class="date">2001 ~ 2024</div>
+            <div>성결대학교 (전자상거래학부 | 인터넷정보공학 복수전공)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section>
+        <h2 class="section-title">Awards</h2>
+        <div class="simple-list">
+          <div class="simple-row">
+            <div class="date">2024.12</div>
+            <div>올해의 우수사원상 (카카오게임즈)</div>
+          </div>
+          <div class="simple-row">
+            <div class="date">2021.05</div>
+            <div>교내 프로그래밍 경진대회 은상 (한국대학교)</div>
+          </div>
+        </div>
+      </section> -->
+
+      <section>
+        <h2 class="section-title">Certifications</h2>
+        <div class="simple-list">
+          <div class="simple-row">
+            <div class="date">2007.12</div>
+            <div>정보처리기사 (한국산업인력공단)</div>
+          </div>
+          <!-- <div class="simple-row">
+            <div class="date">2022.02</div>
+            <div>AWS Certified Solutions Architect - Associate</div>
+          </div>
+          <div class="simple-row">
+            <div class="date">2021.08</div>
+            <div>SQL 개발자(SQLD)</div>
+          </div> -->
+        </div>
+      </section>
+
+      <section class="portfolio" id="portfolio">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <h3>흡연 여부 데이터 분석</h3>
+            <p>흡연여부 데이터 분석을 통해 건강 인사이트를 도출하는 프로젝트 입니다.</p>
+          </div>
+          <div class="portfolio-card">
+            <h3>난임 환자 대상 임신 성공 여부 예측 AI 해커톤</h3>
+            <p>난임 환자 데이터를 분석하여 임신 성공에 영향을 미치는 주요 요인을 도출하고, 정확한 예측을 위한 최적의 AI 모델을 개발하는 프로젝트 입니다.</p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
