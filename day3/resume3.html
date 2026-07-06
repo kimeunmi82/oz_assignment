@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hong gil dong Resume</title>
+  
+  <link rel="stylesheet" href="./resume_style3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+</head>
+<body>
+  <nav class="sidebar">
+    <a href="#resume" class="active">이력서</a>
+    <a href="#portfolio">포트폴리오</a>
+    <button type="button" onclick="window.print()">PDF 내려받기</button>
+  </nav>
+
+  <main>
+    <article class="resume" id="resume">
+      <header class="profile">
+        <div>
+          <h1 class="name">김은미</h1>
+          <div class="contact">
+            <span>▯ 010-9525-8262</span>
+            <span>@ blesseunmi82@gmil.com</span>
+            <span>
+              <a id="github" href="https://github.com/kimeunmi82/oz_assignment/blob/main/day2/resume2.html">
+                ◉ 김은미's Github
+              </a>
+            </span>
+          </div>
+        </div>
+        <div class="profile-section">
+          <!-- 이미지가 있을 경우 src 속성에 이미지 경로를 넣으세요 -->
+          <img class="profile-img" src="https://github.com/kimeunmi82/oz_assignment/blob/main/day1/photo.png?raw=true" alt="프로필 이미지">
+        </div>
+      </header>
+
+      <section>
+        <h2 class="section-title">Introduce</h2>
+        <p class="intro-text">
+          Java 개발 역량을 바탕으로 AI 기술을 녹여내어, 의료 현장의 혁신을 이끄는 헬스케어 서비스를 개발하는 개발자입니다.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title">Skills</h2>
+        <div class="skills">
+          <div>
+            <p class="skill-group-title">Language</p>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">Java</span>
+              <span class="chip">SQL</span>
+            </div>
+          </div>
+          <div>
+            <p class="skill-group-title">Framework</p>
+            <div class="chips">
+              <span class="chip">FastAPI</span>
+              <span class="chip">React</span>
+              <span class="chip">Next.js</span>
+            </div>
+          </div>
+          <div>
+            <p class="skill-group-title">Database</p>
+            <div class="chips">
+              <span class="chip">Oracle</span>
+              <span class="chip">MySql</span>
+            </div>
+          </div>
+          <div>
+            <p class="skill-group-title">Infra</p>
+            <div class="chips">
+              <span class="chip">AWS</span>
+              <span class="chip">Docker</span>
+              <span class="chip">GitHub Actions</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-divider">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="company">
+          <div class="company-head">
+            <div>
+              <h3 class="company-name">데브</h3>
+              <p class="role">Developer <span class="bar">|</span> 사원</p>
+            </div>
+            <div class="period">2005.05~2006.02</div>
+          </div>
+
+          <div class="projects">
+            <div class="project">
+              <div class="project-head">
+                <h4 class="project-title">민주평화통일자문회의 디지털멀티미디어 통합홍보시스템 구축</h4>
+                <div class="period">2005.05 ~ 2006.02</div>
+              </div>
+              <ul>
+                <li>백오피스 개발</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="company">
+          <div class="company-head">
+            <div>
+              <h3 class="company-name">인텍커뮤니케이션</h3>
+              <p class="role">Developer <span class="bar">|</span> 사원</p>
+            </div>
+            <div class="period">2006.02 ~ 2007.03</div>
+          </div>
+
+          <div class="projects">
+            <div class="project">
+              <div class="project-head">
+                <h4 class="project-title">사내 SCM 시스템 개발 및 유지보수</h4>
+                <div class="period">2006.02 ~ 2007.03</div>
+              </div>
+              <ul>
+                <li>백오피스 및 SCM시스템 개발, 유지보수</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="company">
+          <div class="company-head">
+            <div>
+              <h3 class="company-name">크루메이트</h3>
+              <p class="role">Developer <span class="bar">|</span> 차장</p>
+            </div>
+            <div class="period">2007.04 ~ 2026.02</div>
+          </div>
+
+          <div class="projects">
+            <div class="project">
+              <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">프로젝트명</th>
+                  <th scope="col">고객사</th>
+                  <th scope="col">개발기간</th>
+                  <th scope="col">역할</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>프로젝트관리 사이트 개발</td>
+                  <td>㈜크루메이트</td>
+                  <td>2007.04~2007.05</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>스피드메이트 자동차포탈 (B2C/B2B포함) 구축</td>
+                  <td>SK네트웍스</td>
+                  <td>2007.05~2007.08</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>SKT OMP(Open Market Place) 포탈 11번가(www.11st.co.kr) 구축</td>
+                  <td>SKTelecom</td>
+                  <td>2007.08~2007.12</td>
+                  <td>설계,개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>CommerceMate 솔루션 업그레이드</td>
+                  <td>㈜크루메이트</td>
+                  <td>2008.01~2008.02</td>
+                  <td>설계,개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>반디앤루니스 인터넷쇼핑몰 리뉴얼</td>
+                  <td>㈜서울문고</td>
+                  <td>2008.03~2008.07</td>
+                  <td>설계,개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">6</th>
+                  <td>SKT NGFS(Next Generation Finance Service) 구축 – Stock 개발</td>
+                  <td>SKC&C</td>
+                  <td>2008.08~2008.09</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td>농협NH쇼핑몰 백단통합 구축</td>
+                  <td>농협중앙회</td>
+                  <td>2008.10~2009.02</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">8</th>
+                  <td>SKT NGFS(MM2.0) 구축 – Mobile Banking Package 개발</td>
+                  <td>SKC&C</td>
+                  <td>2009.02~2009.03</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">9</th>
+                  <td>MM2.0 확산사업 2차 개발</td>
+                  <td>SKC&C</td>
+                  <td>2009.04~2009.11</td>
+                  <td>설계,개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">10</th>
+                  <td>전자상거래 ASP 솔루션 개발</td>
+                  <td>㈜크루메이트</td>
+                  <td>2009.11~2010.01</td>
+                  <td>설계,개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">11</th>
+                  <td>두산동아 교육 MCP 플랫폼 구축</td>
+                  <td>두산동아</td>
+                  <td>2010.02~2010.06</td>
+                  <td>설계,개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">12</th>
+                  <td>사내 인트라넷 업그레이드</td>
+                  <td>㈜크루메이트</td>
+                  <td>2010.10~2010.11</td>
+                  <td>설계,개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">13</th>
+                  <td>현대자동차 Mozen 웹사이트 구축</td>
+                  <td>현대자동차</td>
+                  <td>2010.11~2011.01</td>
+                  <td>설계,개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">14</th>
+                  <td>신라면세점 쇼핑몰 & 마케팅사이트 리뉴얼</td>
+                  <td>호텔신라</td>
+                  <td>2011.02~2011.09</td>
+                  <td>설계,개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">15</th>
+                  <td>교보핫트랙스 뮤직샵 구축</td>
+                  <td>교보핫트랙스</td>
+                  <td>2011.10~2011.12</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">16</th>
+                  <td>올가홀푸드 e-shop 운영개발</td>
+                  <td>풀무원</td>
+                  <td>2012.01~2012.01</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">17</th>
+                  <td>ABC-MART 차세대 온라인쇼핑몰 구축</td>
+                  <td>ABC-MART</td>
+                  <td>2012.02~2012.04</td>
+                  <td>설계,개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">18</th>
+                  <td>이마트 트레이더스샵 구축</td>
+                  <td>이마트</td>
+                  <td>2012.05~2012.09</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">19</th>
+                  <td>이마트 S.com 구축</td>
+                  <td>이마트</td>
+                  <td>2013.12~2014.01</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">20</th>
+                  <td>SSG.COM 개발운영</td>
+                  <td>SSG.COM</td>
+                  <td>2014.01~2014.04</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">21</th>
+                  <td>올가 개발운영</td>
+                  <td>올가</td>
+                  <td>2014.08~2014.11</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">22</th>
+                  <td>농협a마켓 모바일 구축</td>
+                  <td>농협</td>
+                  <td>2014.12~2015.03</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">23</th>
+                  <td>ORGA e-shop 운영</td>
+                  <td>올가</td>
+                  <td>2015.03~2015.09</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">24</th>
+                  <td>티웨이항공 홈페이지 구축</td>
+                  <td>티웨이</td>
+                  <td>2015.11~2015.12</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">25</th>
+                  <td>미샤 ERP-BO 제휴통합솔루션 연동구축</td>
+                  <td>미샤</td>
+                  <td>2016.01~2016.04</td>
+                  <td>PL</td>
+                </tr>
+                <tr>
+                  <th scope="row">26</th>
+                  <td>네파(주) 온라인쇼핑몰 구축</td>
+                  <td>네파</td>
+                  <td>2016.04~2016.09</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">27</th>
+                  <td>CJ오쇼핑 IT기능 및 구조개선</td>
+                  <td>CJ오쇼핑</td>
+                  <td>2016.10~2017.06</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">28</th>
+                  <td>현대백화점 면세점 구축</td>
+                  <td>현대백화점 면세점</td>
+                  <td>2017.07~2018.03</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">29</th>
+                  <td>CJ이벤트,전시 운영개발</td>
+                  <td>CJ오쇼핑</td>
+                  <td>2018.03~2019.01</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">30</th>
+                  <td>현대드림투어 B2C구축</td>
+                  <td>현대드림투어</td>
+                  <td>2020.03~2020.10</td>
+                  <td>PL</td>
+                </tr>
+                <tr>
+                  <th scope="row">31</th>
+                  <td>원더플레이스 운영</td>
+                  <td>원더플레이스</td>
+                  <td>2020.11~2021.04</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">32</th>
+                  <td>KB국민카드 라이프샵 항공몰 리뉴얼</td>
+                  <td>KB국민카드</td>
+                  <td>2021.06~2021.12</td>
+                  <td>PM</td>
+                </tr>
+                <tr>
+                  <th scope="row">33</th>
+                  <td>유디니 전환 및 서비스 통합 구축 사업</td>
+                  <td>유디니</td>
+                  <td>2021.12~2022.01</td>
+                  <td>개발</td>
+                </tr>
+                <tr>
+                  <th scope="row">34</th>
+                  <td>CJ이벤트,전시 운영개발</td>
+                  <td>CJ오쇼핑</td>
+                  <td>2022.01~2025.10</td>
+                  <td>개발</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="simple-list">
+          <div class="simple-row">
+            <div class="date">1998.03 ~ 2001.02</div>
+            <div>서울 사대부고</div>
+          </div>
+
+          <div class="simple-row">
+            <div class="date">2001.03 ~ 2025.02</div>
+            <div>성결대학교 (전자상거래 | 인터넷정보공학)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section>
+        <h2 class="section-title">Awards</h2>
+        <div class="simple-list">
+          <div class="simple-row">
+            <div class="date">2024.12</div>
+            <div>올해의 우수사원상 (카카오게임즈)</div>
+          </div>
+          <div class="simple-row">
+            <div class="date">2021.05</div>
+            <div>교내 프로그래밍 경진대회 은상 (한국대학교)</div>
+          </div>
+        </div>
+      </section> -->
+
+      <section>
+        <h2 class="section-title">Certifications</h2>
+        <div class="simple-list">
+          <div class="simple-row">
+            <div class="date">2007.12</div>
+            <div>정보처리기사1급 (한국산업인력공단)</div>
+          </div>
+          <!-- <div class="simple-row">
+            <div class="date">2022.02</div>
+            <div>AWS Certified Solutions Architect - Associate</div>
+          </div>
+          <div class="simple-row">
+            <div class="date">2021.08</div>
+            <div>SQL 개발자(SQLD)</div>
+          </div> -->
+        </div>
+      </section>
+
+      <section class="portfolio" id="portfolio">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <h3>흡연 여부 데이터 분석</h3>
+            <p>2026.04~2026.04</p>
+            <p>흡연여부 데이터 분석을 통해 건강 인사이트를 도출하는 프로젝트 입니다.</p>
+          </div>
+          <div class="portfolio-card">
+            <h3>난임 환자 대상 임신 성공 여부 예측 AI 해커톤</h3>
+            <p>2026.05~2026.05</p>
+            <p>난임 환자 데이터를 분석하여 임신 성공에 영향을 미치는 주요 요인을 도출하고, 정확한 예측을 위한 최적의 AI 모델을 개발하는 프로젝트 입니다.</p>
+          </div>
+          <div class="portfolio-card">
+            <h3>흉부 X-ray 이미지 분류 AI 해커톤</h3>
+            <p>2026.06~2026.06</p>
+            <p>흉부 X-ray 이미지를 활용한 폐렴 분류 AI 해커톤입니다.  </p>
+          </div>
+          <div class="portfolio-card">
+            <h3>제8회 K-디지털 트레이닝 해커톤</h3>
+            <p>2026.07~2026.09</p>
+            <p>AI 전환 시대, 인간의 역량을 확장하는 디지털 서비스 개발하는 프로젝트 입니다.</p>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+</body>
+</html>
