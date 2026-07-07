@@ -1,94 +1,33 @@
-function add(a, b) {
-    return a + b;
-}
+const button = document.getElementById("calcBtn");
 
-function subtract(a, b) {
-    return a - b;
-}
+function calculateExpression() {
+    const expression = window.prompt("계산할 수식을 입력하세요. 예: 2+3*4");
 
-function multiply(a, b) {
-    return a * b;
-}
+    if (expression === null) return;
 
-function divide(a, b) {
-    return a / b;
-}
-
-function inputFormula() {
-    return prompt("계산식을 입력하세요.(예: 1 + 1 * 4)");
-}
-
-function calculate(formula) {
-    const tokens = formula.trim().split(/\s+/);
-    if (tokens.length < 3 || tokens.length % 2 === 0) {
-        return "잘못된 계산식이 입력되었습니다.";
-    }
-
-    // 1단계: 곱셈과 나눗셈 먼저 처리
-    const intermediateTokens = [];
-    let i = 0;
-    while (i < tokens.length) {
-        const token = tokens[i];
-        if (token === "*" || token === "/") {
-            const left = Number(intermediateTokens.pop());
-            const operator = token;
-            const right = Number(tokens[i + 1]);
-
-            if (isNaN(left) || isNaN(right)) return "잘못된 숫자가 입력되었습니다.";
-
-            let res;
-            if (operator === "*") {
-                res = multiply(left, right);
-            } else {
-                if (right === 0) return "0으로 나눌 수 없습니다.";
-                res = divide(left, right);
-            }
-            intermediateTokens.push(res);
-            i += 2; // 연산자와 오른쪽 피연산자 건너뜀
-        } else {
-            intermediateTokens.push(token);
-            i++;
-        }
-    }
-
-    // 2단계: 덧셈과 뺄셈 처리
-    let result = Number(intermediateTokens[0]);
-    if (isNaN(result)) return "잘못된 숫자가 입력되었습니다.";
-
-    for (let j = 1; j < intermediateTokens.length; j += 2) {
-        const operator = intermediateTokens[j];
-        const nextValue = Number(intermediateTokens[j + 1]);
-
-        if (isNaN(nextValue)) return "잘못된 숫자가 입력되었습니다.";
-
-        if (operator === "+") {
-            result = add(result, nextValue);
-        } else if (operator === "-") {
-            result = subtract(result, nextValue);
-        } else {
-            return `예외 발생: ${operator}`;
-        }
-    }
-    return result;
-}
-
-function start(formula) {
-    let input = formula;
-    
-    // 인자가 없으면 prompt로 물어봄
-    if (!input) {
-        input = inputFormula();
-    }
-    
-    if (!input) {
-        console.log("계산식을 입력해주세요.");
+    const trimmed = expression.trim();
+    if (!trimmed) {
+        window.alert("수식을 입력해 주세요.");
         return;
     }
 
-    const result = calculate(input);
-    if (typeof result === "string") {
-        console.log(`에러 발생: ${result}`);
-    } else {
-        console.log(`결과: ${result}`);
+    if (!/^[0-9+\-*/().\s]+$/.test(trimmed)) {
+        window.alert("숫자와 +, -, *, /, (, )만 입력할 수 있습니다.");
+        return;
+    }
+
+    try {
+        // eslint-disable-next-line no-new-func
+        const result = Function(`"use strict"; return (${trimmed});`)();
+
+        if (typeof result !== "number" || !Number.isFinite(result)) {
+        throw new Error("Invalid result");
+        }
+
+        window.alert(`결과: ${result}`);
+    } catch {
+        window.alert("올바른 수식이 아닙니다.");
     }
 }
+
+button.addEventListener("click", calculateExpression);

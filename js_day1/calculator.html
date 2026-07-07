@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>사칙연산 계산기</title>
-    <script src="calculator.js"></script>
-</head>
-<body>
-    <h1>콘솔창 계산기 프로그램</h1>
-    <h3>Window OS의 경우</h3>
-    <hr>
-    <p>1. F12 키를 눌러 콘솔 창을 여세요.</p>
-    <p>2. start()를 콘솔창에 입력하여 계산기를 실행합니다.</p>
-    <h3>Mac OS의 경우</h3>
-    <hr>
-    <p>1. Option + Command + i 키를 눌러 콘솔 창을 여세요.</p>
-    <p>2. start()를 콘솔창에 입력하여 계산기를 실행합니다.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt 계산기</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #f5f7fb;
+        color: #111827;
+      }
+
+      main {
+        width: min(480px, calc(100vw - 32px));
+        background: white;
+        border: 1px solid #dbe3f0;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 24px;
+      }
+
+      p {
+        margin: 0 0 20px;
+        line-height: 1.5;
+        color: #4b5563;
+      }
+
+      button {
+        border: 0;
+        border-radius: 10px;
+        padding: 12px 18px;
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+        background: #2563eb;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #1d4ed8;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Prompt 계산기</h1>
+      <p>버튼을 누르면 수식을 입력받아 계산합니다. 예: <strong>2+3*4</strong></p>
+      <button id="calcBtn" type="button">계산하기</button>
+    </main>
+
+    <script src="./calculator.js"></script>
+  </body>
 </html>
