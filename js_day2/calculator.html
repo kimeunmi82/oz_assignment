@@ -1,34 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="./calculator.js"></script>
+    <title>계산기</title>
+    <link rel="stylesheet" href="./calculator_style.css" />
   </head>
   <body>
-    <div class="calculator">
-      <form name="forms">
-        <input type="text" name="output" readonly />
-        <input type="button"value="1"onclick="document.forms.output.value+='1'"/>
-        <input type="button" value="2" onclick="document.forms.output.value +='2'" />
-        <input type="button" value="3" onclick="document.forms.output.value+='3'" />
-        <input type="button" value="+" class="operator" onclick="document.forms.output.value+='+'" />
-        <input type="button" value="4" onclick="document.forms.output.value+='4'" />
-        <input type="button" value="5" onclick="document.forms.output.value+='5'" />
-        <input type="button" value="6" onclick="document.forms.output.value+='6'" />
-        <input type="button" value="-" class="operator" onclick="document.forms.output.value+='-'" />
-        <input type="button" value="7" onclick="document.forms.output.value+='7'" />
-        <input type="button" value="8" onclick="document.forms.output.value+='8'" />
-        <input type="button" value="9" onclick="document.forms.output.value+='9'" />
-        <input type="button" value="*" class="operator" onclick="document.forms.output.value+='*'" />
-        <input type="button" value="AC" class="clear" onclick="document.forms.output.value=''" />
-        <input type="button" value="0" onclick="document.forms.output.value+='0'" />
-        <input type="button" value="=" class="operator_result" onclick="calculate(document.forms.output.value)" />
-        <input type="button" value="/" class="operator" onclick="document.forms.output.value+='/'" />
-      </form>
-    </div>
+    <main class="calculator" aria-label="계산기">
+      <section class="display" aria-live="polite">
+        <div class="expression" id="expression">0</div>
+        <div class="result" id="result">0</div>
+      </section>
+
+      <section class="keys" aria-label="계산기 버튼">
+        <button type="button" class="key utility" data-action="clear">C</button>
+        <button type="button" class="key utility" data-action="backspace">DEL</button>
+        <button type="button" class="key utility" data-value="(">(</button>
+        <button type="button" class="key operator" data-value="/">÷</button>
+
+        <button type="button" class="key" data-value="7">7</button>
+        <button type="button" class="key" data-value="8">8</button>
+        <button type="button" class="key" data-value="9">9</button>
+        <button type="button" class="key operator" data-value="*">×</button>
+
+        <button type="button" class="key" data-value="4">4</button>
+        <button type="button" class="key" data-value="5">5</button>
+        <button type="button" class="key" data-value="6">6</button>
+        <button type="button" class="key operator" data-value="-">−</button>
+
+        <button type="button" class="key" data-value="1">1</button>
+        <button type="button" class="key" data-value="2">2</button>
+        <button type="button" class="key" data-value="3">3</button>
+        <button type="button" class="key operator" data-value="+">+</button>
+
+        <button type="button" class="key wide" data-value="0">0</button>
+        <button type="button" class="key" data-value=".">.</button>
+        <button type="button" class="key equal" data-action="equals">=</button>
+      </section>
+    </main>
+
+    <script src="./calculator.js" defer></script>
   </body>
 </html>

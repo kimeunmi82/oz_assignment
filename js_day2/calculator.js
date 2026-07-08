@@ -1,95 +1,168 @@
-function add(a, b) {
-    return a + b;
+const expressionEl = document.getElementById("expression");
+const resultEl = document.getElementById("result");
+const keys = document.querySelector(".keys");
+
+let expression = "";
+let justCalculated = false;
+
+function formatDisplay(value) {
+    if (!value) return "0";
+    return value
+        .replaceAll("*", "×")
+        .replaceAll("/", "÷")
+        .replaceAll("-", "−");
 }
 
-function subtract(a, b) {
-    return a - b;
-}
-
-function multiply(a, b) {
-    return a * b;
-}
-
-function divide(a, b) {
-    return a / b;
-}
-
-function inputFormula() {
-    return prompt("계산식을 입력하세요.(예: 1 + 1 * 4)");
-}
-
-function calculate(formula) {
-    alert("formula : "+formula);
-    const tokens = formula.trim().split(/\s+/);
-    if (tokens.length < 3 || tokens.length % 2 === 0) {
-        return "잘못된 계산식이 입력되었습니다.";
-    }
-
-    // 1단계: 곱셈과 나눗셈 먼저 처리
-    const intermediateTokens = [];
-    let i = 0;
-    while (i < tokens.length) {
-        const token = tokens[i];
-        if (token === "*" || token === "/") {
-            const left = Number(intermediateTokens.pop());
-            const operator = token;
-            const right = Number(tokens[i + 1]);
-
-            if (isNaN(left) || isNaN(right)) return "잘못된 숫자가 입력되었습니다.";
-
-            let res;
-            if (operator === "*") {
-                res = multiply(left, right);
-            } else {
-                if (right === 0) return "0으로 나눌 수 없습니다.";
-                res = divide(left, right);
-            }
-            intermediateTokens.push(res);
-            i += 2; // 연산자와 오른쪽 피연산자 건너뜀
-        } else {
-            intermediateTokens.push(token);
-            i++;
-        }
-    }
-
-    // 2단계: 덧셈과 뺄셈 처리
-    let result = Number(intermediateTokens[0]);
-    if (isNaN(result)) return "잘못된 숫자가 입력되었습니다.";
-
-    for (let j = 1; j < intermediateTokens.length; j += 2) {
-        const operator = intermediateTokens[j];
-        const nextValue = Number(intermediateTokens[j + 1]);
-
-        if (isNaN(nextValue)) return "잘못된 숫자가 입력되었습니다.";
-
-        if (operator === "+") {
-            result = add(result, nextValue);
-        } else if (operator === "-") {
-            result = subtract(result, nextValue);
-        } else {
-            return `예외 발생: ${operator}`;
-        }
-    }
-    return result;
-}
-
-function start(formula) {
-    let input = formula;
-    
-    // 인자가 없으면 prompt로 물어봄
-    if (!input) {
-        input = inputFormula();
-    }
-    
-    if (!input) {
-        console.log("계산식을 입력해주세요.");
+function updateDisplay(preview = null) {
+    expressionEl.textContent = formatDisplay(expression);
+    if (preview !== null) {
+        resultEl.textContent = preview;
         return;
     }
 
-    const result = calculate(input);
-    if (typeof result === "string") {
-        console.log(`에러 발생: ${result}`);
-    } else {
-        console.log(`결과: ${result}`);
+    resultEl.textContent = expression ? formatDisplay(expression) : "0";
+}
+
+function isOperator(value) {
+    return ["+", "-", "*", "/"].includes(value);
+}
+
+function appendValue(value) {
+    if (justCalculated && /[0-9.(]/.test(value)) {
+        expression = "";
+        justCalculated = false;
+    }
+
+    const last = expression.slice(-1);
+
+    if (value === ".") {
+        const currentNumber = expression.split(/[\+\-\*\/()]/).pop() ?? "";
+        if (currentNumber.includes(".")) return;
+        if (!currentNumber) {
+            expression += "0.";
+        } else {
+            expression += ".";
+        }
+        updateDisplay();
+        return;
+    }
+
+    if (isOperator(value)) {
+        if (!expression && value !== "-") return;
+        if (isOperator(last)) {
+            expression = expression.slice(0, -1) + value;
+        } else {
+            expression += value;
+        }
+        justCalculated = false;
+        updateDisplay();
+        return;
+    }
+
+    expression += value;
+    justCalculated = false;
+    updateDisplay();
+}
+
+function clearAll() {
+    expression = "";
+    justCalculated = false;
+    updateDisplay();
+}
+
+function backspace() {
+    expression = expression.slice(0, -1);
+    justCalculated = false;
+    updateDisplay();
+}
+
+function safeEvaluate(rawExpression) {
+    if (!rawExpression) return "0";
+    if (!/^[0-9+\-*/.()]+$/.test(rawExpression)) {
+        throw new Error("Invalid characters");
+    }
+    // eslint-disable-next-line no-new-func
+    const value = Function(`"use strict"; return (${rawExpression});`)();
+
+    if (typeof value !== "number" || !Number.isFinite(value)) {
+        throw new Error("Invalid result");
+    }       
+
+    return Number.isInteger(value) ? String(value) : String(Number(value.toFixed(10)));
+}
+
+function calculate() {
+    try {
+        const result = safeEvaluate(expression);
+        resultEl.textContent = result;
+        expressionEl.textContent = formatDisplay(expression);
+        expression = result;
+        justCalculated = true;
+    } catch {
+        resultEl.textContent = "오류";
+        justCalculated = true;
     }
 }
+
+keys.addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (!button) return;
+
+    const { action, value } = button.dataset;
+
+    if (action === "clear") {
+        clearAll();
+        return;
+    }
+
+    if (action === "backspace") {
+        backspace();
+        return;
+    }
+
+    if (action === "equals") {
+        calculate();
+        return;
+    }
+
+    if (value) {
+        appendValue(value);
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    const { key } = event;
+
+    if (/^[0-9]$/.test(key)) {
+        appendValue(key);
+        return;
+    }
+
+    if (["+", "-", "*", "/", "."].includes(key)) {
+        appendValue(key);
+        return;
+    }
+
+    if (["(", ")"].includes(key)) {
+        appendValue(key);
+        return;
+    }
+
+    if (key === "Enter" || key === "=") {
+        event.preventDefault();
+        calculate();
+        return;
+    }
+
+    if (key === "Backspace") {
+        event.preventDefault();
+        backspace();
+        return;
+    }
+
+    if (key === "Escape") {
+        clearAll();
+    }
+});
+
+updateDisplay();
