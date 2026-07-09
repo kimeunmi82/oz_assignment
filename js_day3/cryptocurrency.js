@@ -6,8 +6,6 @@ const allTab = document.getElementById('allTab');
 const favoritesTab = document.getElementById('favoritesTab');
 const sortableHeaders = document.querySelectorAll('th.sortable');
 
-// const simbolSortType = document.getElementById('simbolSortType');
-
 let allCryptoData = [];
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 let currentTab = 'all'; // 'all' 또는 'favorites'
@@ -178,10 +176,3 @@ updateSortIndicators();
 
 // 60초마다 데이터 갱신
 setInterval(fetchCryptoData, 60 * 1000);
-
-
-// 심볼정렬
-// function sortSimbol(){
-//     console.log(simbolSortType.classList.value);
-    
-// }
